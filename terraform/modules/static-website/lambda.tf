@@ -6,7 +6,7 @@ data "archive_file" "lambda" {
 
 resource "aws_lambda_function" "example_test_function" {
   filename = "${data.archive_file.lambda.output_path}"
-  function_name = "example_test_function"
+  function_name = "tle-cors"
   role = "${aws_iam_role.example_api_role.arn}"
   handler = "index.handler"
   runtime = "nodejs4.3"
