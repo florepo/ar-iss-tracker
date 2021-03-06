@@ -14,9 +14,13 @@ resource "aws_acm_certificate" "website_domain" {
   provider          = aws.acm_certificates_provider
 
   domain_name               = var.root_domain_name
-  subject_alternative_names = ["www.${var.root_domain_name}"]
   validation_method         = "DNS"
-  
+
+  subject_alternative_names = [
+    "www.${var.root_domain_name}",
+    "${var.api_subdomain_name}.${var.root_domain_name}"
+  ]
+
   lifecycle {
     create_before_destroy = true
   }
@@ -48,7 +52,7 @@ resource "aws_acm_certificate_validation" "website_domain_cert_validation" {
 }
 
 # Regional certificate for HTTP API Gateway, validate via DNS
-resource "aws_acm_certificate" "api_regional" {
+resource "aws_acm_certificate" "api_gatewayv2_regional" {
   provider          = aws
 
   domain_name       = "${var.api_subdomain_name}.${var.root_domain_name}"
@@ -60,9 +64,9 @@ resource "aws_acm_certificate" "api_regional" {
 }
 
 # Setup record for DNS validation of regional certificate
-resource "aws_route53_record" "api_regional_cert_validation" {
+resource "aws_route53_record" "api_gatewayv2_regional_cert_validation" {
   for_each = {
-    for dvo in aws_acm_certificate.api_regional.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.api_gatewayv2_regional.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
@@ -78,7 +82,7 @@ resource "aws_route53_record" "api_regional_cert_validation" {
 }
 
 # Certificate validation request
-resource "aws_acm_certificate_validation" "api_regional_cert_validation" {
-  certificate_arn         = aws_acm_certificate.api_regional.arn
-  validation_record_fqdns = [for record in aws_route53_record.api_regional_cert_validation : record.fqdn]
+resource "aws_acm_certificate_validation" "api_gatewayv2_regional_cert_validation" {
+  certificate_arn         = aws_acm_certificate.api_gatewayv2_regional.arn
+  validation_record_fqdns = [for record in aws_route53_record.api_gatewayv2_regional_cert_validation : record.fqdn]
 }
