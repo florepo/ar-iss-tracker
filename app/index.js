@@ -2,7 +2,7 @@ import { createEarthGnonomic } from './resources/threeJS/models/earth.js'
 import { createIssPositionMarker, addIssModelToMarker } from './resources/threeJS/models/iss.js'
 import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToVernalEquinox, alignISSrelativeEarthSurface} from './resources/helper/sat.js'
 
-const TLE_SOURCE =  'https://oj63hk6d5a.execute-api.eu-west-3.amazonaws.com/production/celetrak-cors-proxy'
+const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
 
 const NFT_MARKER_URL = './resources/dataNFT/earth-qr'
 const CAMERA_PARAM_URL = './resources/data/camera_para.dat'
@@ -99,7 +99,6 @@ window.AROnLoad = function(tle) {
 };
 
 if (window.ARController && ARController.getUserMediaThreeScene) {
-	console.log("test")
 	fetch(TLE_SOURCE)
 		.then(response => response.json())
 		.then(data => data.split("\n").splice(0,3))
