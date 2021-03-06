@@ -100,7 +100,11 @@ window.AROnLoad = function(tle) {
 
 if (window.ARController && ARController.getUserMediaThreeScene) {
 	fetch(TLE_SOURCE)
-		.then(response => response.text())
-		.then(data => data.split("\n").splice(0,3))
+		.then(response => response.json())
+		.then(data => extract_first_tle_set(data))
 		.then(tle =>  window.AROnLoad(tle))
+}
+
+const extract_first_tle_set = (data) => {
+	return data.split("\n").splice(0,3)
 }
