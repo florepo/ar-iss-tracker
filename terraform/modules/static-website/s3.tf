@@ -22,14 +22,3 @@ resource "aws_s3_bucket" "website_root" {
     error_document = "index.html"
   }
 }
-
-resource "aws_s3_bucket" "website_redirect" {
-  bucket        = "www.${var.root_domain_name}-redirect"
-  acl           = "public-read"
-  force_destroy = true
-
-  website {
-    redirect_all_requests_to = "https://www.${var.root_domain_name}"
-  }
-
-}

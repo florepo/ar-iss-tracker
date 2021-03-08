@@ -11,8 +11,8 @@ resource "aws_route53_record" "website_cdn_root_record" {
   type    = "A"
 
   alias {
-    name                   = aws_cloudfront_distribution.website_cdn_root.domain_name
-    zone_id                = aws_cloudfront_distribution.website_cdn_root.hosted_zone_id
+    name                   = aws_cloudfront_distribution.website.domain_name
+    zone_id                = aws_cloudfront_distribution.website.hosted_zone_id
     evaluate_target_health = false
   }
 }
@@ -24,8 +24,8 @@ resource "aws_route53_record" "website_cdn_redirect_record" {
   type    = "A"
 
   alias {
-    name                   = aws_cloudfront_distribution.website_cdn_redirect.domain_name
-    zone_id                = aws_cloudfront_distribution.website_cdn_redirect.hosted_zone_id
+    name                   = aws_cloudfront_distribution.website.domain_name
+    zone_id                = aws_cloudfront_distribution.website.hosted_zone_id
     evaluate_target_health = false
   }
   
