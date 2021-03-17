@@ -5,95 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Landing Page</title>
-
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/"> -->
+    <title>AR ISS Tracker</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="./css/index.css" rel="stylesheet">
   </head>
 
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
-    <div class="container d-flex w-100 mx-auto flex-column">
-      <header class="mb-auto">
+  <body class="d-flex text-center text-white bg-dark">
+    <div class="container d-flex mx-auto flex-column">
+      <!-- <header class="mb-auto">
         <div>
-          <h2 class="float-md-start mb-0">AR ISS Tracker</h2>
           <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" aria-current="page" href="#">On Mobile</a>
-            <a class="nav-link active" aria-current="page" href="#">On Desktop</a>
-            <a class="nav-link" href="#">Tech Stack</a>
+            <a class="nav-link active" aria-current="page" href="#">AR Viewer</a>
+            <a class="nav-link active" aria-current="page" href="#">Tech Stack</a>
           </nav>
         </div>
-      </header>
-
+      </header> -->
       <main>
-        <br>
-        <h2>AR viewer on Mobile</h2>
-        <br>
+        <h1 class="text-info mt-3">
+          AR ISS Tracker
+        </h1>
         <div class="container">
+          <p class="text-muted">
+            An Augmented Reality model of the International Space Station's current position
+          </p>
+          <hr class='bg-info'/>
           <div class="row">
-            <div class="col-sm-8 row text-left">
-              <h4>Step 1: Open AR Viewer</h4>
-              <p>Scan the QR code with your mobile phone camera. The QR code will prompt your device to open the AR viewer screen.</p>
-              <ul>
-                <li>Open the QR code for scanning on the screen <a href="./assets/qr-codes/qr-trigger.png">here</a>.</li>
-                <li>Alternatively, download the code for printing <a href="./assets/qr-codes/qr-trigger.png" download>here</a>.</li>   
-              </ul>
-            </div>
-            <div class="col-sm-4 center">
+            <div class="col-sm-6 image-container mt-3">
               <img
-                class="card-img-top image"
-                src="./assets/images/step-1.png"
+                class="img-fluid wide-image shadow-sm"
+                src="./assets/images/ar-model-mobile.png"
+                alt="step one"
+              />
+            </div>
+            <div class="col-sm-6 image-container mt-3">
+              <img
+                class="img-fluid wide-image shadow-sm"
+                src="./assets/images/ar-model-computer.png"
                 alt="step one"
               />
             </div>
           </div>
-          <br>
-
-          <div class="row">
-            <div class="col-sm-8 row text-left">
-              <h3>Step 2: Scan Trigger</h3>
-              <p>Once the AR viewer is open scan the trigger image with your mobile phone camera.</p>
-              <ul>
-                <li>Open the trigger image for scanning <a href="./assets/trigger/earth.jpg">here</a>.</li>
-                <li>Alternatively, download the image for printing <a href="./assets/trigger/earth.jpg" download>here</a>.</li>   
-              </ul>
-            </div>
-            <div class="col-sm-4">
-              <img
-                class="card-img-top image"
-                src="./assets/images/step-2.png"
-                alt="step one"
-              />
+          <hr class='bg-info'/>
+          <h3 class="text-left text-info">
+            How it works ...
+          </h3>
+          <hr class='bg-info'/>
+          <div class="row text-left">
+            <p>
+              View the current positon of the International Space Station through a 3D augmented reality model.
+            </p>
+            <p>              
+              The positon is calculated based on up-to-date positional data in real time.
+            </p>
+            <p>
+              The model can be viewed by scanning the <a class='text-info' href="./assets/trigger/earth.jpg">trigger image</a> with the <a class='text-info' href="./ar.html">AR viewer</a>.
+            </p>
+          </div>
+          <hr class='bg-info'/>
+          <h3 class="text-left text-info">
+            How to use it ...
+          </h3>
+          <hr class='bg-info'/>
+          <div class="row align-items-left">
+            <div class="col-12 center p-0">
+              <div class="row">
+                <div class="col-sm-4 p-0">
+                  <img
+                    class="image mx-auto mb-5 pr-2"
+                    src="./assets/images/step-1.png"
+                    alt="step one"
+                  />
+                </div>
+                <div class="col-sm-8 p-0">
+                  <h4 class="text-left">
+                    <span class="badge badge-info mr-2">ONE</span>Open the AR Viewer
+                  </h4>
+                  <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item pl-0 pr-0">
+                      <p>
+                        Scan the QR code with your mobile phone camera - either from a print-out, or directly from this website - to open the AR viewer.
+                      </p>
+                      <p>
+                        When opening the AR viewer you will need to grant the page permission to access your camera.
+                      </p>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      Access the QR code for opening the AR viewer <a class='text-info' href="./assets/qr-codes/qr-ar-view.png">here</a>.
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      Alternatively, download the QR code for printing <a class='text-info' href="./assets/qr-codes/qr-ar-view.png download">here</a>.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <br>
-          
-          <div class="row">
-            <div class="col-sm-8 row text-left">
-              <h4>Step 3: View AR Model</h4>
-              <p>An 3D model of the earth with appear above the trigger images, showing the live position of the International Space Station.</p>
-              <p>The augmented reality model is visible as long the trigger image is in the view of the mobile's camera.</p>
+          <div class="row align-items-center">
+            <div class="col-12 center p-0">
+              <div class="row">
+                <div class="col-sm-4 p-0">
+                  <img
+                    class="image mx-auto mb-5 pr-2"
+                    src="./assets/images/step-2.png"
+                    alt="step two"
+                  />
+                </div>
+                <div class="col-sm-8 p-0">
+                  <h4 class="text-left">
+                    <span class="badge badge-info mr-2">TWO</span>Scan the Trigger Image
+                  </h4>
+                  <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item pl-0 pr-0">
+                      Once the AR viewer is open scan the trigger image with your mobile phone camera.
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      Open the trigger image for scanning <a class='text-info' href="./assets/trigger/earth.jpg">here</a>.
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      Alternatively, download the image for printing <a class='text-info' href="./assets/trigger/earth.jpg" download>here</a>.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-4">
-              <img
-                class="card-img-top image"
-                src="../assets/images/step-3.png"
-                alt="step one"
-              />
+          </div>
+          <div class="row align-items-center">
+            <div class="col-12 center p-0">
+              <div class="row">
+                <div class="col-sm-4 p-0">
+                  <img
+                    class="image mx-auto mb-5 pr-2"
+                    src="./assets/images/step-3.png"
+                    alt="step one"
+                  />
+                </div>
+                <div class="col-sm-8 p-0">
+                  <h4 class="text-left">
+                    <span class="badge badge-info mr-2">THREE</span>View the AR model
+                  </h4>
+                  <ul class="list-group list-group-flush text-left">
+                    <li class="list-group-item pl-0 pr-0">
+                      <p>
+                        An 3D model of the earth with appear above the trigger images, showing the live position of the International Space Station.
+                      </p>
+                      <p>
+                        The augmented reality model is visible as long the trigger image is in the view of the mobile's camera.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <hr class='bg-info'/>
       </main>
-      <br>
-
       <footer class="mt-auto text-white-50">
-        <p>Augmented Reality view of the International Space Station's current position</p>
+        <p>An Augmented Reality view of the International Space Station's current position</p>
       </footer>
     </div>
-
   </body>
 </html>
 <!doctype html>

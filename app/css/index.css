@@ -1,15 +1,8 @@
 /* Globals */
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-}
-
 /* Base structure */
 body {
+  font-family: Optima;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
@@ -45,14 +38,22 @@ body {
   user-select: none;
 }
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+.container {
+  max-width: 800px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.wide-image {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
 }
 
 .row {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -62,15 +63,15 @@ body {
 }
 
 .col {
-  display: flex;
   padding-left: 0;
   padding-right: 0;
 }
 
 .image {
   width: 100%;
-  max-width: 150px;
+  max-width: 140px;
   height: auto;
+  object-fit: contain;
 }
 
 .qr {
@@ -79,4 +80,9 @@ body {
 
 .trigger {
   width: 100%;
+}
+
+.list-group-item {
+  border: 1px solid rgba(252, 252, 252, 0.5);
+  background-color: rgba(245, 245, 245, 0);
 }
