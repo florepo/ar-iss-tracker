@@ -4,21 +4,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<!-- <link rel="stylesheet" type="text/css" href="./css/ar.css" media="screen" /> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-	<!-- include artoolkit and three.js-->
+    <link href="./css/ar.css" rel="stylesheet">
+		<!-- include artoolkit and three.js-->
 		<script src="./resources/jsartoolkit5/standard/artoolkit.min.js"></script>
 		<script src="./resources/threeJS/three.js"></script>
 		<script src="./resources/jsartoolkit5/artoolkit/artoolkit.three.js"></script>
 		<!-- include satellite.js to calculate sat positions-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/4.0.0/satellite.min.js"></script>
 		<script src="https://unpkg.com/three@0.87.1/examples/js/loaders/GLTFLoader.js"></script>
-
 	</head>
-	<!-- <body class="d-flex text-white bg-dark">
-		<!-- <canvas></canvas> -->
-		<!-- <p>On Chrome on Android, tap the screen to start playing video stream.</p>
-		<p>Show <a href="./resources/dataNFT/bluemarble.jpg">trigger image</a> to camera to display a the AR model. -->
-
-		<script type=module src="./ar.js" defer></script>
-	<!-- </body> --> -->
+	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-badge-ar" viewBox="0 0 16 16">
+		<path d="M3.794 11l.47-1.542H6.27L6.739 11H8L5.996 5.001H4.607L2.595 11h1.2zm1.503-4.852l.734 2.426h-1.52l.734-2.426h.052zm5.598-1.147H8.5V11h1.173V8.763h1.064L11.787 11h1.327L11.91 8.583C12.455 8.373 13 7.779 13 6.9c0-1.147-.773-1.9-2.105-1.9zm-1.222 2.87V5.933h1.05c.63 0 1.05.347 1.05.989 0 .633-.408.95-1.067.95H9.673z"/>
+		<path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+	</svg>
+	<script type=module src="./ar.js" defer></script>
 </html>
