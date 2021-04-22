@@ -1,4 +1,5 @@
-const ARThreeOnLoad = function() {
+const ARThreeOnLoad = function(tle) {
+  console.log('inside ARThree', tle)
   ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: '../resources/data/camera_para.dat',
   onSuccess: function(arScene, arController, arCamera) {
 
@@ -85,8 +86,7 @@ fetch('https://tle.ar-iss-tracker.info')
   .then(data =>  {
     console.log('inside fetch', data)
     if (window.ARController && ARController.getUserMediaThreeScene) {
-    ARThreeOnLoad();
-    console.log('yes')
+    ARThreeOnLoad(data);
     }
   })
 
