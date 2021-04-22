@@ -12,6 +12,7 @@ const ARThreeOnLoad = function(tle) {
     var renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.gammaOutput = true;
     renderer.gammaFactor = 2.2;
+
     if (arController.orientation === 'portrait') {
       var w = (window.innerWidth / arController.videoHeight) * arController.videoWidth;
       var h = window.innerWidth;
@@ -27,14 +28,6 @@ const ARThreeOnLoad = function(tle) {
     }
 
     document.body.insertBefore(renderer.domElement, document.body.firstChild);
-
-    var rotationV = 0;
-    var rotationTarget = 0;
-
-    renderer.domElement.addEventListener('click', function(ev) {
-      ev.preventDefault();
-      rotationTarget += 1;
-    }, false);
 
     var sphere = new THREE.Mesh(
       new THREE.SphereGeometry(0.5, 8, 8),
@@ -62,23 +55,13 @@ const ARThreeOnLoad = function(tle) {
       arScene.scene.add(markerRoot);
     });
 
-    // arController.loadMarker('../resources/data/patt.kanji', function(markerId) {
-    // 	var markerRoot = arController.createThreeMarker(markerId);
-    // 	markerRoot.add(torus);
-    // 	arScene.scene.add(markerRoot);
-    // });
-
-    var tick = function() {
+    const animate = function() {
       arScene.process();
-      rotationV += (rotationTarget - sphere.rotation.z) * 0.05;
-      sphere.rotation.z += rotationV;
-      rotationV *= 0.8;
-
       arScene.renderOn(renderer);
-      requestAnimationFrame(tick);
+      requestAnimationFrame(animate);
     };
 
-    tick();
+    animate();
 
   }});
 
