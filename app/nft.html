@@ -23,9 +23,16 @@
 		<h1>NFT marker example with Three.js</h1>
 		<p>On Chrome on Android, tap the screen to start playing video stream.</p>
 		<p>Show  <a href="https://github.com/artoolkit/artoolkit5/blob/master/doc/Marker%20images/pinball.jpg">Pinball image</a> to camera to display a colorful object on top of it. Tap the screen to rotate the object.
+
+		<!-- include artoolkit.js and three.js to display the models-->
 		<script src="../resources/jsartoolkit5/standard/artoolkit.min.js"></script>
 		<script src="../resources/jsartoolkit5/artoolkit/artoolkit.three.js"></script>
 		<script src="../resources/threeJS/three.js"></script>
+
+		<!-- include satellite.js to calculate sat positions-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/satellite.js/4.0.0/satellite.min.js"></script>
+		<script src="https://unpkg.com/three@0.87.1/examples/js/loaders/GLTFLoader.js"></script>
+
 		<script type=module src="./nft.js" defer></script>
 	</body>
 </html>
