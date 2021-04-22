@@ -84,14 +84,13 @@ const ARThreeOnLoad = function(tle) {
 if (window.ARController && ARController.getUserMediaThreeScene) {
 fetch('https://tle.ar-iss-tracker.info')
   .then(response => response.json())
+  .then(data => extract_first_data_set(data))
   .then(data =>  {
     console.log('data received:', data)
     ARThreeOnLoad(data);
-
   })
 }
 
-  // fetch('https://tle.ar-iss-tracker.info')
-  // .then(response => response.json())
-  // .then(data =>  console.log('inside if', data))
-
+const extract_first_data_set = (data) => {
+	return data.split("\n").splice(0,3)
+}
