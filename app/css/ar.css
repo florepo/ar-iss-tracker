@@ -1,4 +1,4 @@
-/* html,body {
+html,body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -22,7 +22,7 @@
     left:26px;
 }
 
-.portrait canvas {
+/* .portrait canvas {
     transform-origin: 0 0;
     transform: rotate(90deg) translateX(-100%);
     position: absolute;
@@ -43,14 +43,14 @@
     margin:auto;
     z-index: 0;
 } */
-
+/* 
 html,body {
     margin: 0;
     padding: 0;
     width: 100%;
     text-align: center;
     overflow-x: hidden;
-}
+} */
 .portrait canvas {
     transform-origin: 0 0;
     transform: rotate(-90deg) translateX(-100%);
