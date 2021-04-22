@@ -83,3 +83,7 @@ window.ARThreeOnLoad = function() {
 if (window.ARController && ARController.getUserMediaThreeScene) {
   ARThreeOnLoad();
 }
+
+fetch('https://tle.ar-iss-tracker.info')
+  .then(response => response.json())
+  .then(data =>  console.log('outside if', data))
