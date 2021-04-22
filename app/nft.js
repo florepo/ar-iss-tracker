@@ -6,6 +6,7 @@ const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
 
 const CAMERA_PARAM_URL = '../resources/data/camera_para.dat'
 const NFT_MARKER_URL = './resources/dataNFT/pinball'
+const ISS_MODEL_URL = './assets/3dmodels/station-mini.gltf';
 
 const scaleFactor = 1/100
 const earthRadius = 6371    //km
@@ -60,21 +61,10 @@ const ARThreeOnLoad = function(tle) {
     let orbit = visualizeOrbit(issPosition.userData.satrec, scaleFactor)
     modelGroup.add(orbit)
 
-    // addIssModelToMarker(issPosition, ISS_MODEL_URL)
+    addIssModelToMarker(issPosition, ISS_MODEL_URL)
     alignISSrelativeEarthSurface(issPosition)
     
     modelGroup.rotateOnAxis( new THREE.Vector3(1, 0, 0).normalize(), 90 * Math.PI/180 );
-
-    // let sphere = new THREE.Mesh(
-    //   new THREE.SphereGeometry(0.5, 8, 8),
-    //   new THREE.MeshNormalMaterial()
-    // );
-
-    // sphere.material.flatShading;
-    // sphere.position.z = 40;
-    // sphere.position.x = 80;
-    // sphere.position.y = 80;
-    // sphere.scale.set(80,80,80);
 
     arController.loadNFTMarker(
       NFT_MARKER_URL,
@@ -92,7 +82,6 @@ const ARThreeOnLoad = function(tle) {
     };
 
     animate();
-
   }});
 
   delete window.ARThreeOnLoad;
