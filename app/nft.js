@@ -1,6 +1,10 @@
+const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
+
+const CAMERA_PARAM_URL = '../resources/data/camera_para.dat'
+
 const ARThreeOnLoad = function(tle) {
   console.log('inside ARThree', tle)
-  ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: '../resources/data/camera_para.dat',
+  ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: CAMERA_PARAM_URL,
   onSuccess: function(arScene, arController, arCamera) {
 
     document.body.className = arController.orientation;
@@ -82,13 +86,13 @@ const ARThreeOnLoad = function(tle) {
 };
 
 if (window.ARController && ARController.getUserMediaThreeScene) {
-fetch('https://tle.ar-iss-tracker.info')
-  .then(response => response.json())
-  .then(data => extract_first_data_set(data))
-  .then(data =>  {
-    console.log('data received:', data)
-    ARThreeOnLoad(data);
-  })
+  fetch(TLE_SOURCE)
+    .then(response => response.json())
+    .then(data => extract_first_data_set(data))
+    .then(data =>  {
+      console.log('data received:', data)
+      ARThreeOnLoad(data);
+    })
 }
 
 const extract_first_data_set = (data) => {
