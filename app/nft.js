@@ -80,14 +80,17 @@ window.ARThreeOnLoad = function() {
   delete window.ARThreeOnLoad;
 };
 
-if (window.ARController && ARController.getUserMediaThreeScene) {
-  ARThreeOnLoad();
-
-  fetch('https://tle.ar-iss-tracker.info')
+fetch('https://tle.ar-iss-tracker.info')
   .then(response => response.json())
-  .then(data =>  console.log('inside if', data))
-}
+  .then(data =>  {
+    console.log('inside if', data)
+    if (window.ARController && ARController.getUserMediaThreeScene) {
+      window.ARThreeOnLoad();
+    }
+  })
 
-// fetch('https://tle.ar-iss-tracker.info')
-//   .then(response => response.json())
-//   .then(data =>  console.log('outside if', data))
+
+  // fetch('https://tle.ar-iss-tracker.info')
+  // .then(response => response.json())
+  // .then(data =>  console.log('inside if', data))
+
