@@ -81,15 +81,15 @@ const ARThreeOnLoad = function(tle) {
   delete window.ARThreeOnLoad;
 };
 
+if (window.ARController && ARController.getUserMediaThreeScene) {
 fetch('https://tle.ar-iss-tracker.info')
   .then(response => response.json())
   .then(data =>  {
-    console.log('inside fetch', data)
-    if (window.ARController && ARController.getUserMediaThreeScene) {
+    console.log('data received:', data)
     ARThreeOnLoad(data);
-    }
-  })
 
+  })
+}
 
   // fetch('https://tle.ar-iss-tracker.info')
   // .then(response => response.json())
