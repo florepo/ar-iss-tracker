@@ -85,7 +85,7 @@ fetch('https://tle.ar-iss-tracker.info')
   .then(data =>  {
     console.log('inside fetch', data)
     if (window.ARController && ARController.getUserMediaThreeScene) {
-    window.ARThreeOnLoad();
+    ARThreeOnLoad();
     console.log('yes')
     }
   })
