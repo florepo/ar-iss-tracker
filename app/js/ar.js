@@ -1,6 +1,6 @@
-import { createEarthGnonomic } from './resources/threeJS/models/earth.js'
-import { createIssPositionMarker, addIssModelToMarker } from './resources/threeJS/models/iss.js'
-import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToVernalEquinox, alignISSrelativeEarthSurface} from './resources/helper/sat.js'
+import { createEarthGnonomic } from './models/earth.js'
+import { createIssPositionMarker, addIssModelToMarker } from './models/iss.js'
+import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToVernalEquinox, alignISSrelativeEarthSurface} from './helper/sat.js'
 
 const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
 
@@ -42,11 +42,6 @@ window.AROnLoad = function(tle) {
 
 			document.body.insertBefore(renderer.domElement, document.body.firstChild);
 
-			// renderer.domElement.addEventListener('click', function(ev) {
-			// 	ev.preventDefault();
-			// 	rotationTarget += 1;
-			// }, false);
-
 			let modelGroup = new THREE.Group();
 			// x positive - left, y positive - up, z positive -towards viewer | x, y zero is bottom right of trigger
 			modelGroup.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1)); // we need flip the objects since ARtoolkit displays them mirrored
@@ -77,14 +72,8 @@ window.AROnLoad = function(tle) {
 				markerRoot.add(modelGroup);
 			});
 
-			// var rotationV = 0;
-			// var rotationTarget = 0;
-
 			const animate = function() {
 				arScene.process();
-				// rotationV += (rotationTarget - sphere.rotation.z) * 0.05;
-				// sphere.rotation.z += rotationV;
-				// rotationV *= 0.8;
 
 				arScene.renderOn(renderer);
 				requestAnimationFrame(animate);
@@ -93,9 +82,7 @@ window.AROnLoad = function(tle) {
 			animate();
 		}
 	});
-
 	delete window.AROnLoad;
-
 };
 
 if (window.ARController && ARController.getUserMediaThreeScene) {
