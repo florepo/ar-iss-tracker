@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.80.0">
     <title>AR ISS Tracker</title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="./css/index.css" rel="stylesheet">
   </head>
@@ -14,19 +13,31 @@
   <body class="d-flex text-center text-white bg-dark">
     <div class="container d-flex mx-auto flex-column">
       <main>
-        <h1 class="text-info mt-3">
+        <h2 class="text-info mt-2">
           AR ISS Tracker
-        </h1>
+        </h2>
+        <div class="mt-auto text-white-50">
+          <p>An Augmented Reality model of the International Space Station's current position</p>
+        </div>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active text-danger" href="./ar.html">AR Viewer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-teal" href="./assets/trigger/earth.jpg">Trigger Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-info" href="#guide">Guide</a>
+          </li>
+        </ul>
         <div class="container">
-          <p class="text-muted">
-            An Augmented Reality model of the International Space Station's current position
-          </p>
           <hr class='bg-info' />
+
           <div class="row">
             <div class="col-sm-6 image-container mt-3">
               <img
                 class="img-fluid wide-image shadow-sm"
-                src="./assets/images/ar-model-mobile.png"
+                src="./assets/images/scan-display-trigger-small.png"
                 alt="step one"
               />
             </div>
@@ -34,9 +45,18 @@
               <img
                 class="img-fluid wide-image shadow-sm"
                 src="./assets/images/ar-model-computer.png"
-                alt="step one"
+                alt="desktop"
               />
             </div>
+          </div>
+          <hr class='bg-info' />
+          <div class="row">
+            <p class="font-weight-light">
+              View an Augmented Reality model of the current positon of the International Space Station through.
+            </p>
+            <p class="font-weight-light">
+              The model can be viewed with the <a class='text-danger' href="./ar.html">AR Viewer</a> by scanning the <a class='text-primary' href="./assets/trigger/earth.jpg">trigger image</a> .
+            </p>
           </div>
           <hr class='bg-info' />
           <div class="row">
@@ -50,30 +70,14 @@
             <div class="col-sm-6 image-container mt-3">
               <img
                 class="img-fluid wide-image shadow-sm"
-                src="./assets/images/scan-display-trigger-small.png"
-                alt="step one"
+                src="./assets/images/ar-model-mobile.png"
+                alt="mobile"
               />
             </div>
           </div>
           <hr class='bg-info' />
-          <h3 class="text-left text-info">
+          <h3 class="text-left text-info" id='guide'>
             How it works ...
-          </h3>
-          <hr class='bg-info' />
-          <div class="row text-left">
-            <p>
-              View the current positon of the International Space Station through a 3D augmented reality model.
-            </p>
-            <p>              
-              The positon is calculated based on up-to-date positional data in real time.
-            </p>
-            <p>
-              The model can be viewed by scanning the <a class='text-info' href="./assets/trigger/earth.jpg">trigger image</a> with the <a class='text-info' href="./ar.html">AR viewer</a>.
-            </p>
-          </div>
-          <hr class='bg-info'/>
-          <h3 class="text-left text-info">
-            How to use it ...
           </h3>
           <hr class='bg-info'/>
           <div class="row align-items-left">
@@ -88,22 +92,24 @@
                 </div>
                 <div class="col-sm-8 p-0">
                   <h4 class="text-left">
-                    <span class="badge badge-info mr-2">ONE</span>Open the AR Viewer
+                    ...open the AR Viewer
                   </h4>
                   <ul class="list-group list-group-flush text-left">
                     <li class="list-group-item pl-0 pr-0">
                       <p>
                         Scan the QR code with your mobile phone camera - either from a print-out, or directly from this website - to open the AR viewer.
                       </p>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      <a class='text-info' href="./assets/qr-codes/qr-ar-view.png">Display</a> the QR code for opening the AR viewer on the screen.
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      Or <a class='text-info' href="./assets/qr-codes/qr-ar-view.png download">download</a> the QR code for opening the AR viewer for printing.
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
                       <p>
-                        When opening the AR viewer you will need to grant the page permission to access your camera.
+                        When opening the AR viewer on your phone you will need to grant the page permission to access your camera.
                       </p>
-                    </li>
-                    <li class="list-group-item pl-0 pr-0">
-                      Access the QR code for opening the AR viewer <a class='text-info' href="./assets/qr-codes/qr-ar-view.png">here</a>.
-                    </li>
-                    <li class="list-group-item pl-0 pr-0">
-                      Alternatively, download the QR code for printing <a class='text-info' href="./assets/qr-codes/qr-ar-view.png download">here</a>.
                     </li>
                   </ul>
                 </div>
@@ -122,17 +128,17 @@
                 </div>
                 <div class="col-sm-8 p-0">
                   <h4 class="text-left">
-                    <span class="badge badge-info mr-2">TWO</span>Scan the Trigger Image
+                    ...scan the Trigger Image
                   </h4>
                   <ul class="list-group list-group-flush text-left">
                     <li class="list-group-item pl-0 pr-0">
                       Once the AR viewer is open scan the trigger image with your mobile phone camera.
                     </li>
                     <li class="list-group-item pl-0 pr-0">
-                      Open the trigger image for scanning <a class='text-info' href="./assets/trigger/earth.jpg">here</a>.
+                      <a class='text-info' href="./assets/trigger/earth.jpg">Display</a> the trigger image for scanning.
                     </li>
                     <li class="list-group-item pl-0 pr-0">
-                      Alternatively, download the image for printing <a class='text-info' href="./assets/trigger/earth.jpg" download>here</a>.
+                      Alternatively, <a class='text-info' href="./assets/trigger/earth.jpg" download>download</a> the image for printing .
                     </li>
                   </ul>
                 </div>
@@ -151,15 +157,22 @@
                 </div>
                 <div class="col-sm-8 p-0">
                   <h4 class="text-left">
-                    <span class="badge badge-info mr-2">THREE</span>View the AR model
+                    ...view the AR model
                   </h4>
                   <ul class="list-group list-group-flush text-left">
                     <li class="list-group-item pl-0 pr-0">
                       <p>
                         An 3D model of the earth with appear above the trigger images, showing the live position of the International Space Station.
                       </p>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
+                      <p>              
+                        The positon is calculated based on up-to-date orbital positional data.
+                      </p>
+                    </li>
+                    <li class="list-group-item pl-0 pr-0">
                       <p>
-                        The augmented reality model is visible as long the trigger image is in the view of the mobile's camera.
+                        The model is visible as long the trigger image is in the view of the mobile phone's camera.
                       </p>
                     </li>
                   </ul>
