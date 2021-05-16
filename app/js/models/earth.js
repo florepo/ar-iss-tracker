@@ -40,6 +40,8 @@ export const createEarthGnonomic = (radius = 1, scaleFactor = 1) => {
         }) //left side
     ];
 
+    geometry.faceVertexUvs[0][7] = [new THREE.Vector2(0, 0), new THREE.Vector2(0, 1), new THREE.Vector2(1, 1)];
+
     let mesh = new THREE.Mesh(geometry, cubeMaterials);
 
     return mesh

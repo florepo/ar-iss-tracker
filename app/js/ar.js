@@ -40,12 +40,15 @@ window.AROnLoad = function(tle) {
 				}
 			}
 
+			console.log('display-mode:',arController.orientation)
+
 			document.body.insertBefore(renderer.domElement, document.body.firstChild);
 
 			let modelGroup = new THREE.Group();
 			// x positive - left, y positive - up, z positive -towards viewer | x, y zero is bottom right of trigger
-			modelGroup.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1)); // we need flip the objects since ARtoolkit displays them mirrored
 			modelGroup.position.set(80,80,80)
+
+			console.log(modelGroup)
 
 			let earth = createEarthGnonomic(earthRadius, scaleFactor)
 			earth = alignXeciToVernalEquinox(earth)
