@@ -11,6 +11,7 @@ const ISS_MODEL_URL = './assets/3dmodels/station-mini.gltf';
 
 const scaleFactor = 1/75
 const earthRadius = 6371
+let flipTexture   = false
 
 window.AROnLoad = function(tle) {
 
@@ -31,6 +32,7 @@ window.AROnLoad = function(tle) {
 				let h = window.innerWidth;
 				renderer.setSize(w, h);
 				renderer.domElement.style.paddingBottom = (w-h) + 'px';
+				flipTexture = true
 			} else {
 				if (/Android|mobile|iPad|iPhone/i.test(navigator.userAgent)) {
 					renderer.setSize(window.innerWidth, (window.innerWidth / arController.videoWidth) * arController.videoHeight);
@@ -40,17 +42,13 @@ window.AROnLoad = function(tle) {
 				}
 			}
 
-			console.log('display-mode:',arController.orientation)
-
 			document.body.insertBefore(renderer.domElement, document.body.firstChild);
 
 			let modelGroup = new THREE.Group();
 			// x positive - left, y positive - up, z positive -towards viewer | x, y zero is bottom right of trigger
 			modelGroup.position.set(200,200,100)
 
-			console.log(modelGroup)
-
-			let earth = createEarthGnonomic(earthRadius, scaleFactor)
+			let earth = createEarthGnonomic(earthRadius, scaleFactor, flipTexture)
 			earth = alignXeciToVernalEquinox(earth)
 			modelGroup.add(earth)	
 			
