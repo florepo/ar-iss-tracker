@@ -19,142 +19,59 @@
         <div class="mt-auto text-white-50">
           <p>An Augmented Reality model of the International Space Station's current position</p>
         </div>
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active text-danger" href="./ar.html">AR Viewer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-teal" href="./assets/trigger/earth.jpg">Trigger Image</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-info" href="#guide">Guide</a>
-          </li>
-        </ul>
         <div class="container">
           <hr class='bg-info' />
-
           <div class="row">
             <div class="col-sm-6 image-container mt-3">
               <img
                 class="img-fluid wide-image shadow-sm"
-                src="./assets/images/scan-print-trigger-small.png"
+                src="./assets/images/ar-model-mobile-1.png"
                 alt="step one"
               />
             </div>
             <div class="col-sm-6 image-container mt-3">
               <img
                 class="img-fluid wide-image shadow-sm"
-                src="./assets/images/ar-model-mobile.png"
+                src="./assets/images/ar-model-mobile-2.jpg"
                 alt="mobile"
               />
             </div>
           </div>
-          <hr class='bg-info' />
-          <div class="row">
-            <p class="font-weight-light">
-              View an Augmented Reality model of the current positon of the International Space Station through.
-            </p>
-            <p class="font-weight-light">
-              The model can be viewed with the <a class='text-danger' href="./ar.html">AR Viewer</a> by scanning the <a class='text-primary' href="./assets/trigger/earth.jpg">trigger image</a> .
-            </p>
-          </div>
-          <hr class='bg-info' />
-          <div class="row">
-            <div class="col-sm-6 image-container mt-3">
-              <img
-                class="img-fluid wide-image shadow-sm"
-                src="./assets/images/scan-display-trigger-small.png"
-                alt="step one"
-              />
-            </div>
-            <div class="col-sm-6 image-container mt-3">
-              <img
-                class="img-fluid wide-image shadow-sm"
-                src="./assets/images/ar-model-computer.png"
-                alt="desktop"
-              />
-            </div>
-          </div>
+          <p>Shows the current position of International Space Station (ISS) as an Augmented Reality model.</p>
+          <p>The ISS's position is calculated based on up-to-date orbital data (Three Line Elements) from Celestrack.</p>
+          <p>Technologies used: jsartoolkit5, three.js, satellite.js, Bootstrap, Github Workflow CI, Terraform, and AWS.</p>
+
           <hr class='bg-info' />
           <h3 class="text-left text-info" id='guide'>
-            How to use it ...
+            How to view the model
           </h3>
           <hr class='bg-info'/>
           <div class="row align-items-left">
             <div class="col-12 center p-0">
               <div class="row">
-                <div class="col-sm-4 p-0">
+                <div class="col-sm-6 p-0">
                   <img
                     class="image mx-auto mb-5 pr-2"
-                    src="./assets/images/step-1.png"
+                    src="./assets/trigger/trigger-image.png"
                     alt="step one"
                   />
                 </div>
-                <div class="col-sm-8 p-0">
+                <div class="col-sm-6 p-0">
                   <ul class="list-group list-group-flush text-left">
                     <li class="list-group-item pl-0 pr-0">
-                      <p> Open the AR viewer and grant the application permission to access the camera of your device
-                      </p>
+                      <p>Scan the trigger image 2x with the camera of your mobile device:</p>
                     </li>
                     <li class="list-group-item pl-0 pr-0">
-                      <a class='text-danger' href="./ar.html">Launch </a> the AR viewer directly from this website
+                      First, scan the QR code to open the web app's AR viewer.
                     </li>
                     <li class="list-group-item pl-0 pr-0">
-                      Open the AR viewer by scanning this <a class='text-info' href="./assets/qr-codes/qr-ar-view.png">QR code</a> on your mobile device
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-12 center p-0">
-              <div class="row">
-                <div class="col-sm-4 p-0">
-                  <img
-                    class="image mx-auto mb-5 pr-2"
-                    src="./assets/images/step-2.png"
-                    alt="step two"
-                  />
-                </div>
-                <div class="col-sm-8 p-0">
-                  <ul class="list-group list-group-flush text-left">
-                    <li class="list-group-item pl-0 pr-0">
-                      <p>Once the AR viewer is open scan the trigger image.</p>
+                      Second, scan the whole image - with the camera view of the web app's AR viewer - to display the model.
                     </li>
                     <li class="list-group-item pl-0 pr-0">
-                      <a class='text-info' href="./assets/trigger/earth.jpg">Open</a> the trigger image for scanning directly on from this site
+                      <br>
+                      <p>Display the trigger image on screen, <a class='text-info' href="./assets/trigger/trigger-image.png">here</a>.</p>
+                      <p>Download the trigger for printing, <a class='text-danger' href="./assets/trigger/trigger-image.png" download>here</a>.</p>
                     </li>
-                    <li class="list-group-item pl-0 pr-0">
-                      <a class='text-info' href="./assets/trigger/earth.jpg" download>Download</a> the image for printing
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-12 center p-0">
-              <div class="row">
-                <div class="col-sm-4 p-0">
-                  <img
-                    class="image mx-auto mb-5 pr-2"
-                    src="./assets/images/step-3.png"
-                    alt="step one"
-                  />
-                </div>
-                <div class="col-sm-8 p-0">
-                  <ul class="list-group list-group-flush text-left">
-                    <li class="list-group-item pl-0 pr-0">
-                      <p>
-                        An 3D model of the earth with appear above the trigger images, showing the live position of the International Space Station.
-                      </p>
-                      <p>              
-                        The positon is calculated based on up-to-date orbital positional data.
-                      </p>
-                      <p>
-                        The model is visible as long the trigger image is in the view of the mobile phone's camera.
-                      </p>
                     </li>
                   </ul>
                 </div>
