@@ -5,11 +5,11 @@ import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToV
 const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
 
 const CAMERA_PARAM_URL = './data/camera_para.dat'
-const NFT_MARKER_URL = './data/bluemarble'
+const NFT_MARKER_URL = './data/trigger'
 
 const ISS_MODEL_URL = './assets/3dmodels/station-mini.gltf';
 
-const scaleFactor = 1/100
+const scaleFactor = 1/75
 const earthRadius = 6371
 
 window.AROnLoad = function(tle) {
@@ -46,7 +46,7 @@ window.AROnLoad = function(tle) {
 
 			let modelGroup = new THREE.Group();
 			// x positive - left, y positive - up, z positive -towards viewer | x, y zero is bottom right of trigger
-			modelGroup.position.set(80,80,80)
+			modelGroup.position.set(200,200,100)
 
 			console.log(modelGroup)
 
