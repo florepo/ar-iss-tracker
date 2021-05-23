@@ -1,56 +1,36 @@
 <!-- ABOUT THE PROJECT -->
-## About the Project
+## About
 
-View the current positon of the International Space Station through a 3D augmented reality model.
+The app displays the current positon of the International Space Station as an 3D Augmented Reality model.
 
-The positon is calculated based on up-to-date orbital data.
+![AR ISS position model](https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/ar-model-mobile-1.png?raw=true)
 
-
-![AR ISS position model](https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/ar-model-computer.png?raw=true)
-
-![AR ISS position model](https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/ar-model-mobile.png?raw=true)
+The positon is calculated based on up-to-date orbital data (Three Line Element sets from Celestrek).
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## How to use
 
-The model can be viewed by scanning the trigger image with the websites AR viewer.
+The model can be viewed by scanning the trigger image twice with camera of your mobile device. Please note: The model is optimised for mobile Chrome
+
+![Trigger Image](https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/trigger/trigger-image.png?raw=true)
 
 #### Open the AR viewer
 
-<img align=left src="https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/step-1.png?raw=true)" width="120" height="120">
-
-When opening the AR viewer you will need to grant the page permission to access your camera.
-
-Content Cell  | Scan the QR code with your mobile phone camera - either from a print-out, or directly from this website - to open the AR viewer.
+Scan the QR embedded in the trigger image to open the web app's AR viewer and open the display URL.
 
 
 #### Scan the Trigger Image
-<img align="left" src="https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/step-2.png?raw=true)" width="120" height="120">
 
-Once the AR viewer is open scan the trigger image with your mobile phone camera.
-
-<br/>
-<br/>
-<br/>
-
-#### Enjoy the view
-
-<img align="left" src="https://github.com/flow1981/ar-iss-tracker/blob/main/app/assets/images/step-3.png?raw=true)" width="120" height="120">
-
-An 3D model of the earth with appear above the trigger images, showing the live position of the International Space Station.
-
-The augmented reality model is visible as long the trigger image is in the view of the mobile's camera.
-
-<br/>
+Once the AR viewer is open scan the whole trigger image with from the web app's AR camera view.
 
 ## Key Features
 
-* Use of Augemented Reality, Natural Feature tracking and 3D modelling javascript libraries to create the visualization.
-* Real-time position of ISS calculated with satellite.js based on up-to-date TLE (ThreeLineElement) orbital position data from Celestrack.
+* Use of Augemented Reality with NFT (Natural Feature Tracking) and 3D modelling javascript libraries to create the visualization.
+* Real-time position of ISS calculated with satellite.js based on up-to-date TLE (Three Line Element Sets) orbital position data from CelesTrak.
 * Serverless architecture using AWS S3, Cloudfront, API gateway, and Lambda.
 * Use of AWS HTTP API gateway & AWS Lambda as an alternative to 'cors-anywhere' for frontend cross origin data access.
 * Supercheap webhosting due to S3, HTTP API Gateway, Cloudfront and Lambdas pricing structure.
-* Https web hosting using AWS Cloudfront, and automated DNS based certificate validation.
+* Https web hosting (required for AR) using AWS Cloudfront, and automated DNS based certificate validation.
 * All required infrastructure for the project are defined and can be provisioned with Terraform.
 * CI pipeline allows deployments on push to 'main' branch using Github workflows.
 </div>
@@ -58,22 +38,15 @@ The augmented reality model is visible as long the trigger image is in the view 
 ### Built With
 
 * ES6
-* [JSartoolkit5 with NFT (natural feature tracking)](https://github.com/artoolkitx/jsartoolkit5)
-* [Three.js](https://threejs.org/)
+* [jsartoolkit5 with NFT (natural feature tracking)](https://github.com/artoolkitx/jsartoolkit5)
+* [three.js](https://threejs.org/)
 * [satellite.js](https://github.com/shashwatak/satellite-js)
 * [Bootstrap](https://getbootstrap.com/)
 * [AWS - S3, Cloudfront, ACM, Route53, API Gateway, Lambda](https://aws.amazon.com/)
-* Terraform
+* [Terraform](https://www.terraform.io/)
 * [Github Workflows CI](https://github.com/features/actions)
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-
 ### Prerequisites
 
 This is a list of things you need to setup the project.
@@ -86,7 +59,7 @@ This is a list of things you need to setup the project.
   - Setup a [Terraform programmatic access user](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in AWS with the sufficient priviledges to create all resources of the project.
   - Store AWS access credentials for Terraform accces in a [local AWS credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html). Never store them directly in your codebase!
 
-* Your domain name
+* Domain name
   - You will require your own to domain for deploying to AWS.
   - The domain will be needed for TLS certificate validation to enable hosting the website via https:// (which is required for the AR viewer to work, and best practice anyway).
   - Additionally, a subdomain is needed as an endpoint for the HTTP API gateway (used for 'frontend' cross origin access of the orbital position data).
