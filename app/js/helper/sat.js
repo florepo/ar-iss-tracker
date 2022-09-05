@@ -1,5 +1,6 @@
 export const initOrbitalPosition = (satMesh, tle, timeSinceEpoch = 0, scaleFactor=1)=> {
-    let satrec = satellite.twoline2satrec(tle[1], tle[2]);
+  console.log(tle)
+  let satrec = satellite.twoline2satrec(tle[1], tle[2]);
     satMesh.userData.satrec = satrec;
   
     let pAv = satellite.sgp4(satrec, timeSinceEpoch);
