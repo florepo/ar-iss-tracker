@@ -2,7 +2,7 @@ import { createEarthGnonomic } from './models/earth.js'
 import { createIssPositionMarker, addIssModelToMarker } from './models/iss.js'
 import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToVernalEquinox, alignISSrelativeEarthSurface} from './helper/sat.js'
 
-const TLE_SOURCE =  'https://tle.ar-iss-tracker.info'
+const TLE_SOURCE =  'https://tle.ar-iss-tracker.link'
 
 const CAMERA_PARAM_URL = './data/camera_para.dat'
 const NFT_MARKER_URL = './data/trigger'
