@@ -5,7 +5,7 @@ import { initOrbitalPosition, updateOrbitalPostion, visualizeOrbit, alignXeciToV
 const TLE_SOURCE =  'https://tle.ar-iss-tracker.link'
 
 const CAMERA_PARAM_URL = './data/camera_para.dat'
-const NFT_MARKER_URL = './data/trigger'
+const NFT_MARKER_URL = './data/trigger_new'
 
 const ISS_MODEL_URL = './assets/3dmodels/station-mini.gltf';
 
