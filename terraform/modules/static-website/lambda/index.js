@@ -4,7 +4,7 @@ exports.handler = async (event) => {
 
   async function getTLE() {
       const options = {
-          host: 'celestrak.com',
+          host: 'celestrak.org',
           path: '/NORAD/elements/stations.txt',
       }
       return new Promise((resolve, reject) => {
