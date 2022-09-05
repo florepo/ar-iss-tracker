@@ -9,7 +9,7 @@ terraform {
 }
 
 data "aws_route53_zone" "selected" {
-  name         = "ar-iss-tracker.info"
+  name         = "ar-iss-tracker.link"
 }
 
 provider "aws" {
@@ -32,6 +32,6 @@ module "ar-nft-three" {
     aws.acm_provider = aws.acm_certificates_provider
   }
 
-  root_domain_name   = "ar-iss-tracker.info"
+  root_domain_name   = "ar-iss-tracker.link"
   api_subdomain_name = "tle"
 }
